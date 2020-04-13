@@ -29,3 +29,25 @@ import ("fmt")
 // functions and whatnots to do things
 func main() {}
 ```
+
+## pointers
+
+Let's say we have an instance of a struct called `person` which we have the field `name` with the value as `"jon doe"` and we try to change this value like so:
+
+```go
+p := person{
+  name: "jon doe"
+}
+p.name = "new name"
+```
+
+The above code won't work because at the time of the instantiation we are saving/allocating in memory the person object with name and value, and then when trying to change the name although go won't through any errors we won't be changing the values/data in the original allocation of the person object.
+
+For that we need to use pointer operators:
+
+`&` Get the memory address where originally saved, example `pPointer := &p` \
+`*` Get the value of the memory address is pointing to, example `*pPointer`
+
+That being said, Go will allow to omit the `&` when the receiver is a pointer "type".
+
+When to think about the pointers being passed arround? when using value types such as `int`, `float`, `string`, `bool` and `structs`
