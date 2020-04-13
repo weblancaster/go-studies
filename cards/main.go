@@ -5,11 +5,14 @@ import (
 )
 
 func main() {
-	cards := newDeck()
-	hand, remainingDeck := deal(cards, 5)
+	fileName := "new-deck.txt"
+	cardsFromFile := getDeckFromFile(fileName)
+	// hand, remainingDeck := deal(cards, 5)
 
-	hand.print();
-	remainingDeck.print();
+	// hand.print();
+	// remainingDeck.print();
 
-	fmt.Println(cards.toString())
+	// fmt.Println(cards.toString())
+
+	fmt.Println(cardsFromFile)
 }
