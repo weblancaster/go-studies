@@ -51,3 +51,7 @@ For that we need to use pointer operators:
 That being said, Go will allow to omit the `&` when the receiver is a pointer "type".
 
 When to think about the pointers being passed arround? when using value types such as `int`, `float`, `string`, `bool` and `structs`
+
+## channels
+
+Channels are a way to communicate between go routines, first we need to `make` a channel and pass the type of the messages (which can also be channels) `c := make(chan string)` then we need to pass the channel to the function that uses the go routine `go doSomethingFoo(c)` and finally use the channels by sending `c <- "some message"` and receiving `<- c`
